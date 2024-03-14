@@ -1,0 +1,5 @@
+com/jerezm/practice/service/ItemService.class
+com/jerezm/practice/api/ItemResource.class
+com/jerezm/practice/repository/ItemRepository.class
+com/jerezm/practice/model/Item.class
+com/jerezm/practice/TodolistApplication.class

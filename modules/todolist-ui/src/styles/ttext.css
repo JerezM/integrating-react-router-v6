@@ -1,0 +1,14 @@
+.t-text-text {
+    font-family: "Archivo", sans-serif;
+    font-weight: var(--weight-text);
+    font-size: var(--size-text);
+    line-height: var(--lineHeight-text);
+}
+
+.t-text-header2 {
+    font-family: "Archivo", sans-serif;
+    font-weight: var(--weight-header2);
+    font-size: var(--size-header2);
+    line-height: var(--lineHeight-header2);
+    color: var(--col-accents);
+}

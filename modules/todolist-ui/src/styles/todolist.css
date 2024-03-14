@@ -1,0 +1,31 @@
+.todolist { 
+    display: flex; 
+    flex-direction: column; 
+    padding-right: 70%; 
+    padding-left: 3%; 
+    padding-top: 3%
+}
+
+.title {
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+.list {
+    display: flex; 
+    flex-direction: column; 
+    align-content: flex-start; 
+    justify-content: flex-start; 
+    margin-bottom: 5%;
+}
+
+.add-item {
+    display: flex; 
+    justify-content: space-between; 
+    width: 83%;
+}
+
+.add-item-input {
+    width: 80%;
+    margin-left: 3%;
+}

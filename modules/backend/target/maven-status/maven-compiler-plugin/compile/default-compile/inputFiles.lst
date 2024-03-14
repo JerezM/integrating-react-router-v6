@@ -1,0 +1,9 @@
+/home/martin/Personal Projects/comeback-practice/modules/backend/src/main/java/com/jerezm/practice/service/ItemService.java
+/home/martin/Personal Projects/comeback-practice/modules/backend/src/main/java/com/jerezm/practice/exception/ItemNotFoundException.java
+/home/martin/Personal Projects/comeback-practice/modules/backend/src/main/java/com/jerezm/practice/utils/DTOUtils.java
+/home/martin/Personal Projects/comeback-practice/modules/backend/src/main/java/com/jerezm/practice/TodolistApplication.java
+/home/martin/Personal Projects/comeback-practice/modules/backend/src/main/java/com/jerezm/practice/repository/ItemRepository.java
+/home/martin/Personal Projects/comeback-practice/modules/backend/src/main/java/com/jerezm/practice/dto/ItemDTO.java
+/home/martin/Personal Projects/comeback-practice/modules/backend/src/main/java/com/jerezm/practice/config/CorsConfig.java
+/home/martin/Personal Projects/comeback-practice/modules/backend/src/main/java/com/jerezm/practice/model/Item.java
+/home/martin/Personal Projects/comeback-practice/modules/backend/src/main/java/com/jerezm/practice/api/ItemResource.java
