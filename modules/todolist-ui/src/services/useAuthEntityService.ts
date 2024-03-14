@@ -1,12 +1,18 @@
-import { useState } from "react";
+
 
 interface useAuthEntityServiceProps {
     endpoint: string;
 }
 
-export const useAuthEntityService = ({endpoint}: useAuthEntityServiceProps)  => {
+export interface CustomRequestProps {
+    body?: object; 
+    endpoint?: string; 
+    params?: Record<string, string>;
+}
 
-    const baseUrl = process.env.REACT_APP_BACKEND_URL as string ?? "http://localhost:8080/api" + endpoint;
+export const useAuthEntityService = (props: useAuthEntityServiceProps)  => {
+
+    const baseUrl = process.env.REACT_APP_BACKEND_URL as string ?? "http://localhost:8080/api";
 
     const prepareRequest = async (httpMethod: string, bodyObject?: object): Promise<RequestInit> => {
         const requestOptions: RequestInit = {
@@ -22,8 +28,7 @@ export const useAuthEntityService = ({endpoint}: useAuthEntityServiceProps)  => 
 
     const executeRequest = async <T>(request: RequestInit, endpoint?: string, params?: Record<string, string>): Promise<T> => {
         const queryParams = new URLSearchParams(params).toString();
-        const requestUrl: string = baseUrl + (endpoint ?? '') + (params ? `?${queryParams}` : '');
-
+        const requestUrl: string = baseUrl + props.endpoint + (endpoint ?? '') + (params ? `?${queryParams}` : '');        
         try {
             const response = await fetch(requestUrl, request);
             if (!response.ok) {
@@ -31,22 +36,42 @@ export const useAuthEntityService = ({endpoint}: useAuthEntityServiceProps)  => 
                 throw new Error(errorMsg);
             }
 
-            return await response.json() as T; 
+            const contentType = response.headers.get('Content-Type');
+            if (contentType && contentType.includes('application/json')) {
+                return await response.json() as T;
+            } else {
+                return {} as T;
+            }
+            
         } catch (error) {
             console.error(error);
             throw error;
         }
     }
 
-    const get = async <T>(endpoint?: string, params?: Record<string, string>, body?: object): Promise<T> => {
+    const get = async <T>(customRequestProps?: CustomRequestProps): Promise<T> => {
+        const {body, endpoint, params} = customRequestProps ?? {};
         const request = await prepareRequest("GET", body);
         return executeRequest(request, endpoint, params);
     }
 
-    const put = async <T>(endpoint?: string, params?: Record<string, string>, body?: object): Promise<T> => {
+    const post = async <T>(customRequestProps?: CustomRequestProps): Promise<T> => {
+        const {body, endpoint, params} = customRequestProps ?? {};
+        const request = await prepareRequest("POST", body);
+        return executeRequest(request, endpoint, params);
+    }
+
+    const put = async <T>(customRequestProps?: CustomRequestProps): Promise<T> => {
+        const {body, endpoint, params} = customRequestProps ?? {};
         const request = await prepareRequest("PUT", body);
         return executeRequest(request, endpoint, params);
     }
 
-    return { get, put };
+    const del = async <T>(customRequestProps?: CustomRequestProps): Promise<T> => {
+        const {body, endpoint, params} = customRequestProps ?? {};
+        const request = await prepareRequest("DELETE", body);
+        return executeRequest(request, endpoint, params);
+    }
+
+    return { get, post, put, del };
 }
