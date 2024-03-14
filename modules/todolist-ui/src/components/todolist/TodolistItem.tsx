@@ -1,11 +1,11 @@
 import { FunctionComponent, useEffect, useState } from "react";
-import { TText } from "./utils/Texts";
-import { TextType } from "../model/utils/TextType";
+import { TText } from "../utils/Texts";
+import { TextType } from "../../model/utils/TextType";
 import { Button, Checkbox, TextField, Tooltip } from "@mui/material";
-import { Colors } from "../utils/Colors";
-import '../styles/todolist-item.css';
-import { Item } from "../model/todolist/Item";
-import { useTodolistService } from "../services/useTodolistService";
+import { Colors } from "../../utils/Colors";
+import '../../styles/todolist-item.css';
+import { Item } from "../../model/todolist/Item";
+import { useTodolistService } from "../../services/useTodolistService";
 
 interface TodolistItemProps {
     item: Item;
@@ -48,6 +48,13 @@ export const TodolistItem: FunctionComponent<TodolistItemProps> = ({item, delete
         })
     }
 
+    const handleKeyPressed = (event: React.KeyboardEvent<HTMLDivElement>) => {
+        if (event.key === 'Enter' && (editedContent || editedContent.length > 0)) {
+            handleEditContent();
+        }
+        console.log("[DEBUG] event: ", event);
+    }
+
     return (
         <div className="item">
             <div className="item-first-part">
@@ -61,7 +68,7 @@ export const TodolistItem: FunctionComponent<TodolistItemProps> = ({item, delete
                         </Tooltip>
                     :
                         <div className="item-content">
-                            <TextField id="add-item-input" type="text" size="small" value={editedContent} onChange={handleChangeOnEditItemInput}/>                                                       
+                            <TextField id="add-item-input" type="text" size="small" value={editedContent} onChange={handleChangeOnEditItemInput} onKeyDown={handleKeyPressed}/>                                                       
                         </div>
                 }           
                 
