@@ -52,7 +52,6 @@ export const TodolistItem: FunctionComponent<TodolistItemProps> = ({item, delete
         if (event.key === 'Enter' && (editedContent || editedContent.length > 0)) {
             handleEditContent();
         }
-        console.log("[DEBUG] event: ", event);
     }
 
     return (

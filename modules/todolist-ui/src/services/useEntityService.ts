@@ -1,6 +1,6 @@
 
 
-interface useAuthEntityServiceProps {
+interface useEntityServiceProps {
     endpoint: string;
 }
 
@@ -10,7 +10,7 @@ export interface CustomRequestProps {
     params?: Record<string, string>;
 }
 
-export const useAuthEntityService = (props: useAuthEntityServiceProps)  => {
+export const useEntityService = (props: useEntityServiceProps)  => {
 
     const baseUrl = process.env.REACT_APP_BACKEND_URL as string ?? "http://localhost:8080/api";
 
