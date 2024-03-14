@@ -1,0 +1,10 @@
+# IntelliJ IDEA
+modules/backend/.idea/
+modules/backend/.mvn
+
+# Archivo de configuración de IntelliJ IDEA
+modules/backend/*.iml
+
+# Directorio generado por Maven
+modules/backend/target/
+
