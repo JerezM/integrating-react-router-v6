@@ -1,0 +1,22 @@
+.settings {
+    display: flex; 
+    height: 100vh;
+}
+
+.side-bar {
+    width: 214px; 
+    background-color: var(--col-side-bar);  
+    display: flex; 
+    flex-direction: column;
+}
+
+.settings-nav, .settings-nav-active {
+    text-decoration: none; 
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    padding-left: 20px;
+}
+
+.settings-nav-active {
+    background-color: var(--col-side-bar-hover);
+}

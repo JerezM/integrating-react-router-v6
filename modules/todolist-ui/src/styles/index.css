@@ -1,7 +1,9 @@
 :root {
   /* UI-UX COLORS */
   --col-primary-orange: #ecac40;
+  --col-primary-orange-hover: #da9a2d;
   --col-side-bar: #666666;
+  --col-side-bar-hover: #4e4d4d;
 
   --col-accents: #FFFFFF;
 
