@@ -1,16 +1,29 @@
 import { FC } from "react";
+import "../styles/Header.css"
 import { TText } from "./utils/Texts";
 import { TextType } from "../model/utils/TextType";
-import { Colors } from "../utils/Colors";
+import { RouteDefinition } from "../routing/App.routes";
+import { NavLink } from "react-router-dom";
 
+interface HeaderProps {
+    routes: RouteDefinition[];
+}
 
-export const Header: FC = () => {
+export const Header: FC<HeaderProps> = ({routes}) => {
     
     return (
-        <div style={{backgroundColor: Colors.PRIMARY_ORANGE, display: 'flex', justifyContent: 'space-between', paddingLeft: '1%', height: '6vh', textAlign: 'center'}}>
-            <div style={{display: 'flex', alignItems: 'center'}}>
-                <TText type={TextType.HEADER2} style={{color: "white"}}>Home</TText>
-            </div>
+        <div className="header">
+            <ul className="header-ul">
+                { 
+                    routes.map((route, index) => (
+                        <li key={index} style={{height: '100%', display: 'flex', alignItems: 'center'}}>
+                            <NavLink className={({ isActive }) => isActive ? "header-nav-active" : "header-nav"} to={route.path?.toString() as string}>
+                                <TText type={TextType.HEADER2} style={{textAlign: 'center'}}>{route.label}</TText>
+                            </NavLink>                        
+                        </li>
+                    ))                 
+                }     
+            </ul>
         </div>
     );
 } 
