@@ -3,7 +3,7 @@ export enum Views {
     ITEMS,
     SETTINGS,
     PROFILE,
-    //ADMIN,
+    ADMIN,
     NOT_FOUND,
 }
 
@@ -30,10 +30,10 @@ const paths: PathNode[] = [
                 id: Views.PROFILE,
                 path: "/profile",
             },
-            /*{
+            {
                 id: Views.ADMIN,
                 path: "/admin",
-            }*/
+            }
         ]
     },
     {

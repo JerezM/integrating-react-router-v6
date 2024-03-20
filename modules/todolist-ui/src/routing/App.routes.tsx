@@ -35,11 +35,11 @@ export const getRoutes = (): RouteDefinition[] => ([
                 element: <Profile/>,
                 label: "Profile"
             },
-            /*{
+            {
                 path: getPath(Views.ADMIN),
                 element: <Admin/>,
                 label: "Admin"
-            }*/
+            }
         ]
     }
 ]);
