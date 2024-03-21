@@ -18,6 +18,4 @@ Your contributions are welcome! If you have suggestions for improving this proje
 
 ## Further Reading
 
-For a deeper understanding of the concepts and methodologies discussed in this project, be sure to read the detailed article: [A Modular Approach to Integrating React-Router v6]([https://linktoyourpost.com](https://dev.to/jerezm/a-modular-approach-to-integrating-react-router-1img)https://dev.to/jerezm/a-modular-approach-to-integrating-react-router-1img).
-
-
+For a deeper understanding of the concepts and methodologies discussed in this project, be sure to read the detailed article: [A Modular Approach to Integrating React-Router v6](https://dev.to/jerezm/a-modular-approach-to-integrating-react-router-1img).
