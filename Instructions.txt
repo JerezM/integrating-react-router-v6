@@ -1,0 +1,4 @@
+How to run the project:
+1) Navigate to the schema folder inside the script directory.
+2) Execute the create-database.sh script. This script will create a PostgreSQL image in Docker and also generate a database with sample data for the todo list.
+3) To run the backend and frontend, navigate to the run folder inside the script directory and execute the respective scripts.
