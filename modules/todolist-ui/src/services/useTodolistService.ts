@@ -1,9 +1,9 @@
 import { Item } from "../model/todolist/Item";
-import { CustomRequestProps, useEntityService } from "./useEntityService"
+import { CustomRequestProps, useHttpClient } from "./useHttpClient"
 
 
 export const useTodolistService = () => {
-    const { get, post, put, del } = useEntityService({endpoint: "/items"});
+    const { get, post, put, del } = useHttpClient({endpoint: "/items"});
 
     const getAllItems = async (): Promise<Array<Item>> => {
         return get<Array<Item>>();
